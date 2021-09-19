@@ -34,23 +34,46 @@ This analysis builds all of its machine leaning models around a logistic regress
 Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
 * Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-Balanced Accuracy:
+  * Model 1 Accuracy, Precision, and Recall scores.
+  
+Balanced Accuracy Score:
 
 0.9520479254722232
 
-Precision:
+* Precision:
 
-Recall:
+    * Group 0:
+        * 1.00
+    * Group 1:
+        * 0.85
 
+* Recall:
+
+   * Group 0:
+       * 0.99
+   * Group 1:
+       * 0.91
 
 * Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
-Balanced Accuracy:
+  * Model 2 Accuracy, Precision, and Recall scores.
+  
+Balanced Accuracy Score:
 
-Precision:
+0.9936781215845847
 
-Recall:
+* Precision:
+
+    * Group 0:
+        * 1.00
+    * Group 1:
+        * 0.84
+
+* Recall:
+
+   * Group 0:
+       * 0.99
+   * Group 1:
+       * 0.99
 
 ## Summary
 
@@ -60,8 +83,8 @@ Summarize the results of the machine learning models, and include a recommendati
 
 It is important to remember the role of recall when assessing the efficacy of both of the machine learning models outlined in this project. Recall is a particularly important evaluation metric when assessing the performance of models created for the purpose of catching rare, but detrimental, instances of a particular outcome or classification label.
 
-The recall metric displays how adequately a model correctly predicted the class of a certain instance compared to the total number of instances that actually belong to said class. In the case of credit-risk, the recall value of the "unhealthy loan" class needs to be optimal, even if this optimization leads to minor detriments in precision or accuracy. 
+The recall metric displays how adequately a model correctly predicted the class of a certain instance compared to the total number of instances that actually belong to said class. In the case of credit-risk, the recall value of the "unhealthy loan" class (group 1 in this context) needs to be optimal, even if this optimization leads to minor detriments in precision or accuracy. 
 
-For this reason, the second model, which was trained using oversampled data, will perform significantly better than its counterpart that utilizes original and unmodified data. The second model eliminates much of the recall error present in the initial, unmodifed model, meaning that it will identify credit-risks with a higher degree of consistency. 
+For this reason, the second model, which was trained using oversampled data, will perform significantly better than its counterpart that utilizes original and unmodified data for the given use case. The second model eliminates much of the recall error for group 1 that is present in the initial, unmodifed model. Model 2's increase in recall for group 1 means that it will identify credit-risks with a higher degree of consistency than its non-resampled predecessor.
 
-It is important to note that the oversampled (second) model does have a slightly decreased precision value, but this really is not detriimental given the use case of both models. 
+It is important to note that the oversampled (second) model does have a slightly decreased precision value for group 1, but this really is not detriimental given the use case of both models. The decrease in precision is minimal, and the worst outcome this may lead to is a missclassification of a healthy loan. This potential particular missclassification poses far less financial risk than missclassifying unhealthy loans. 
