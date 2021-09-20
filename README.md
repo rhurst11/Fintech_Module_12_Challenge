@@ -19,7 +19,7 @@ Many of the imbalancing issues present in credit risk data remain prevalent in f
 
 This analysis relies on a dataset of lending data composed of seven columns that outline characteristics of each loan, and one column that classifies each loan. This lending data classifies loans using a binary scale; A label of 0 means that a loan is healthy, whereas a label of 1 means a loan is unhealthy / risky.
 
-This analysis echoes the same basic structure of many classification models focused on credit risk or fraud detection. The target variable is the "loan staus" column of our data, which holds the binary classifications of each loan described in the dataset. 
+This analysis echoes the same basic structure of many classification models focused on credit risk or fraud detection. The target variable is the "loan status" column of our data, which holds the binary classifications of each loan described in the dataset. 
 
 The features variables used to train the model were all columns other than the loan staus column present in the lending dataset.
 
@@ -77,14 +77,10 @@ Balanced Accuracy Score:
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
 It is important to remember the role of recall when assessing the efficacy of both of the machine learning models outlined in this project. Recall is a particularly important evaluation metric when assessing the performance of models created for the purpose of catching rare, but detrimental, instances of a particular outcome or classification label.
 
 The recall metric displays how adequately a model correctly predicted the class of a certain instance compared to the total number of instances that actually belong to said class. In the case of credit-risk, the recall value of the "unhealthy loan" class (group 1 in this context) needs to be optimal, even if this optimization leads to minor detriments in precision or accuracy. 
 
-For this reason, the second model, which was trained using oversampled data, will perform significantly better than its counterpart that utilizes original and unmodified data for the given use case. The second model eliminates much of the recall error for group 1 that is present in the initial, unmodifed model. Model 2's increase in recall for group 1 means that it will identify credit-risks with a higher degree of consistency than its non-resampled predecessor.
+For this reason, the second model, which was trained using oversampled data, will perform significantly better than its counterpart that utilizes original and unmodified data for the given use case. The second model eliminates much of the recall error for group 1 that is present in the initial, unmodifed model. Model 2's increase in recall for group 1 means that it will identify credit-risks with a higher degree of reliability than its non-resampled predecessor.
 
-It is important to note that the oversampled (second) model does have a slightly decreased precision value for group 1, but this really is not detriimental given the use case of both models. The decrease in precision is minimal, and the worst outcome this may lead to is a missclassification of a healthy loan. This potential particular missclassification poses far less financial risk than missclassifying unhealthy loans. 
+It is important to note that the oversampled (second) model does have a slightly decreased precision value for group 1, but this really is not detrimental given the use case of both models. The decrease in precision is minimal, and the worst outcome this may lead to is a missclassification of a healthy loan. This particular kind of missclassification poses far less financial risk than missclassifying unhealthy loans. 
